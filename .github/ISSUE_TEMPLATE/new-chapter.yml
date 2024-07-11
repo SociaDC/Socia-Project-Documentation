@@ -9,18 +9,18 @@ body:
 - type: input
   id: topic
   attributes:
-    description: What Topic do you want to describe?
     label: Topic
+    description: What Topic do you want to describe?
     placeholder: Where are the stones at?
 - type: textarea
   id : description
   attributes:
-    description: Please describe what points this topics documentation should include!
     label: Detailed Description
+    description: Please describe what points this topics documentation should include!
     placeholder: ...
 - type: input
   id: reason
   attributes:
-    description: Why do we need this documented piece of art?
     label: Reason
+    description: Why do we need this documented piece of art?
     placeholder: Because ...
