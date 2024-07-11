@@ -1,7 +1,7 @@
 name: "New Chapter"
 description: "Adding a new Chapter/Topic into the Documentation!"
 title: "Chapter - "
-label: ["Chapter"]
+labels: ["Chapter"]
 body: 
 - type: markdown
   attributes:
