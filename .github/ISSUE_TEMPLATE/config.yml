@@ -1,0 +1,4 @@
+contact_links:
+  - name: © Original Project - Documentation Template
+    url : https://github.com/PHCaesar/DocumentationTemplate
+    about : If you are interested in using such documentation tooling yourself or you want to understand the asciidoc build better, check out the original repository.
