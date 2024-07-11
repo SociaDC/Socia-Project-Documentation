@@ -4,7 +4,8 @@ title: "DChange - "
 labels: ["dc"]
 body:
 - type: markdown
-  attributes: Thank you for reading through the documentation, it means much to us <3
+  attributes: 
+    value: Thank you for reading through the documentation, it means much to us <3
 - type: input
   id: topic
   attributes:
