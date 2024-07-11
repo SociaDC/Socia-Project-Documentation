@@ -1,0 +1,33 @@
+# 🕮 Socia_Documentation based on **DocumentationTemplate**  
+By @PHCaesar
+
+image::https://img.shields.io/badge/docs-passing-brightgreen[]
+
+This project provides any necesary infos about the project and how the development lifecycles are beeing handled in the team.
+Including Naming scheme, step by step instructions and much more.
+
+## Exection
+
+**exec.{bat,bash}**
+
+   # PDF - Quickstart
+   generates the pdf file instantly and destroys the container afterwards
+
+**pro-exec.{bat,bash}**
+
+  # Custom Usage 
+  creates the docker container and connects you to the container internal prompt
+
+### 🪟 Windows
+
+usage per 🖱️ **DoubleClick** on the bat file
+
+### 🐧 Linux (Unix)
+
+[source,bash]
+----
+# bash [filename]
+----
+
+## Requirements
+* [x] Docker installed

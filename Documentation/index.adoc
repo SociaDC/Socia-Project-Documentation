@@ -1,0 +1,11 @@
+
+:doctype: book 
+:preface-title: Preface 
+:toc: center
+
+
+//Activating some features
+//  Mathematical Equasions
+:stem: 
+
+include::git_paper.adoc[]
