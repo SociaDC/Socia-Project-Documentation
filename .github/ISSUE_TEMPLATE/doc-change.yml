@@ -1,0 +1,19 @@
+name: "Documentation Change"
+description: "Request a change in existing documentation topics"
+title: "DChange - "
+labels: ["dc"]
+body:
+- type: markdown
+  attributes: Thank you for reading through the documentation, it means much to us <3
+- type: input
+  id: topic
+  attributes:
+    label: Topic / Chapter
+    placeholder: General Rules etc.
+    description: The topic you demand change for !
+- type: textarea
+  id: change_description
+  attributes:
+    label: Description
+    placeholder: Everything ... Just kidding (:
+    description: What has to be changed in this chapter?
