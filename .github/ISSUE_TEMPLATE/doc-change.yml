@@ -15,5 +15,5 @@ body:
   id: change_description
   attributes:
     label: Description
-    placeholder: Everything ... Just kidding (:
+    placeholder: Everything ... Just kidding 
     description: What has to be changed in this chapter?
