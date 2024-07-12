@@ -8,4 +8,6 @@
 //  Mathematical Equasions
 :stem: 
 
+include::project_structure.adoc[]
+
 include::git_paper.adoc[]
