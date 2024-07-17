@@ -1,0 +1,27 @@
+name: documentation_build
+
+on:
+  push:
+    branches: ["master"]
+  pull_request:
+    branches: ["master"]
+
+
+jobs:
+  build:
+    runs-on: ubuntu:20.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run Docker container and generate Documentation PDF
+        run: |
+          chmod +x ./exec.sh
+          ./exec.sh
+
+      - name: Upload PDF to GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: Documentation/*.pdf
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
