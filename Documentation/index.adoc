@@ -1,13 +1,14 @@
 
 :doctype: book 
-:preface-title: Preface 
-:toc: center
+:preface-title: Preface
 
 
 //Activating some features
 //  Mathematical Equasions
 :stem: 
 
-include::project_structure.adoc[]
+Table of Contents
 
-include::git_paper.adoc[]
+---
+1. link:project_structure[Project Structuring]
+2. link:git_paper[Git & Conventions]
