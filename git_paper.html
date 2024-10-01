@@ -518,9 +518,9 @@ While tags are literal pointers that are used to highlight one specific commit a
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="/Assets/Images/Pasted%20image%2020240711084325.png" alt="git_areas">
+<img src="Assets/Images/GitFlow.png" alt="Git Areas">
 </div>
-<div class="title">Figure 1. Git Areas <sup>[1]</sup></div>
+<div class="title">Figure 1. Git Areas</div>
 </div>
 <div class="paragraph">
 <p>Originally linus torvald intended the system to work without any centralized Server that is responsible to store all of the developers data.
@@ -534,9 +534,9 @@ They always except for one time have to be based on another commit.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="/Assets/Images/Pasted%20image%2020240711083258.png" alt="commit_info">
+<img src="Assets/Images/Commit.png" alt="Commit">
 </div>
-<div class="title">Figure 2. Commit Info <sup>[1]</sup></div>
+<div class="title">Figure 2. Commit</div>
 </div>
 <div class="paragraph">
 <p>A node also contains, a rsa id which is used to identify the signed commit.
@@ -556,8 +556,13 @@ To be more accurate, branches are nothing else than so called "heads"</p>
 <p>These Heads act as pointers on dedicated commits.
 If you create a new Branch from master, there is just one Pointer being added to the system directing to the last commit accessed.
 After commiting again, the new commit is getting pointed at by our new branch, while the previous one maintains beeing the head of master and so on.
-Because of that "diverging Branches" are just branches that focus on different commits, that somewhere had the same past (commit history).
-image::/Assets/Images/Pasted image 20240711083646.png[commit,title="Commit Explanation <sup>[1]</sup>"]</p>
+Because of that "diverging Branches" are just branches that focus on different commits, that somewhere had the same past (commit history).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="Assets/Images/CommitXBranch.png" alt="Commit Structure">
+</div>
+<div class="title">Figure 3. Commits</div>
 </div>
 <div class="paragraph">
 <p>Each Branch header also has a unique SHA-1 hashed identifier.</p>
@@ -576,15 +581,15 @@ By using the cli in which you have to create the branch by hand.
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="/Assets/Images/Pasted%20image%2020240711074105.png" alt="branch1">
+<img src="Assets/Images/Branch.png" alt="Branch">
 </div>
-<div class="title">Figure 3. Branch Explanation <sup>[1]</sup></div>
+<div class="title">Figure 4. Branch</div>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="/Assets/Images/Pasted%20image%2020240711074149.png" alt="branch2">
+<img src="Assets/Images/newBranch.png" alt="newBranch">
 </div>
-<div class="title">Figure 4. Branch Explanation <sup>[2]</sup></div>
+<div class="title">Figure 5. newBranch</div>
 </div>
 </div>
 <div class="sect4">
@@ -811,7 +816,7 @@ For the sake of simplicity we will mostly focus on those basic "Porcelain" Comma
 <div class="sect3">
 <h4 id="_socia_naming_conventions">Socia Naming Conventions</h4>
 <div class="paragraph">
-<p>Now we arre heading into the territory of project specific conventions.
+<p>Now we are heading into the territory of project specific conventions.
 These are meant to be specified once and EVERYONE in the team should to work around them.</p>
 </div>
 <div class="olist arabic">
@@ -863,8 +868,13 @@ As their content is linked to the issue definition we found that indexing such b
 </div>
 <div class="paragraph">
 <p><strong><strong>BEST PRACTICE:</strong></strong>
-Use this template to create the ticket:
-image::/Assets/Images/Pasted image 20240711082139.png[ticket_reference,title="Title Reference <sup>[1]</sup>"]</p>
+Use this template to create the ticket:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="Assets/Images/TechnicalFeature.png" alt="BugReport">
+</div>
+<div class="title">Figure 6. BugReport</div>
 </div>
 <div class="paragraph">
 <p><code>feature#&lt;Ticket-number&gt;/&lt;feature-name&gt;</code></p>
@@ -886,8 +896,13 @@ image::/Assets/Images/Pasted image 20240711082139.png[ticket_reference,title="Ti
 <p>Bug and Hotfixes are no actual features but rather code fixtures or completions of previous features mistakes.
 Their difference beeing that Hotfixes are direct reactions on top of the <code>main</code> branch and Bugfixes are made from the <code>dev</code> branch.
 <strong><strong>BEST PRACTICE:</strong></strong>
-Use this template to create the ticket:
-image::/Assets/Images/Pasted image 20240711082116.png[ticket_reference2,title="Title Reference <sup>[2]</sup>"]</p>
+Use this template to create the ticket:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="Assets/Images/BugReport.png" alt="BugReport">
+</div>
+<div class="title">Figure 7. BugReport</div>
 </div>
 <div class="paragraph">
 <p><code>bugfix#&lt;Bugfix-ticketnumber&gt;/&lt;bugfix-name&gt;</code></p>
@@ -906,9 +921,16 @@ image::/Assets/Images/Pasted image 20240711082116.png[ticket_reference2,title="T
 </ol>
 </div>
 <div class="paragraph">
-<p>Creating a new Issue should be relatively straight forward.
-![[Pasted image 20240711081954.png]]
-Afterwards Choose your template of choice and start describing your desired Product state.
+<p>Creating a new Issue should be relatively straight forward.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="Assets/Images/newIssue.png" alt="Issue naming">
+</div>
+<div class="title">Figure 8. Issue naming</div>
+</div>
+<div class="paragraph">
+<p>Afterwards Choose your template of choice and start describing your desired Product state.
 The Issues names should ALWAYS represent the feature they are representing.
 <strong><strong>(Funny names do be allowed though)</strong></strong></p>
 </div>
@@ -925,7 +947,7 @@ The Issues names should ALWAYS represent the feature they are representing.
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-10-01 07:44:46 UTC
+Last updated 2024-10-01 11:46:01 UTC
 </div>
 </div>
 </body>

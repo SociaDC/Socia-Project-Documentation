@@ -60,7 +60,7 @@ When understanding how changes actually reach their destination you have to know
 - The repository (reached through **git commit .** )
 - The remote (external service => leaves your PC with **git push**)
 
-image::/Assets/Images/Pasted image 20240711084325.png[git_areas,title="Git Areas ^[1]^"]
+image::Assets/Images/GitFlow.png[Git Areas,title="Git Areas"]
 
 Originally linus torvald intended the system to work without any centralized Server that is responsible to store all of the developers data.
 In his mind, developers would send their requests, commits and branches from one pc to another, so that any developer is able to access their state of the application without using such server.
@@ -69,8 +69,7 @@ In his mind, developers would send their requests, commits and branches from one
 Commits are Nodes that save changed information.
 They always except for one time have to be based on another commit.
 
-image::/Assets/Images/Pasted image 20240711083258.png[commit_info,title="Commit Info ^[1]^"]
-
+image::Assets/Images/Commit.png[Commit,title="Commit"]
 
 A node also contains, a rsa id which is used to identify the signed commit.
 This RSA id includes the information of date, author, changed content as well as its predecessor which leads to a unique key identifier.
@@ -86,8 +85,9 @@ These Heads act as pointers on dedicated commits.
 If you create a new Branch from master, there is just one Pointer being added to the system directing to the last commit accessed.
 After commiting again, the new commit is getting pointed at by our new branch, while the previous one maintains beeing the head of master and so on.
 Because of that "diverging Branches" are just branches that focus on different commits, that somewhere had the same past (commit history).
-image::/Assets/Images/Pasted image 20240711083646.png[commit,title="Commit Explanation ^[1]^"]
 
+
+image::Assets/Images/CommitXBranch.png[Commit Structure,title="Commits"]
 
 Each Branch header also has a unique SHA-1 hashed identifier.
 
@@ -103,8 +103,8 @@ or by creating it directly in the github web ui.
 *Go to Branches > new Branch and choose your origin.*
 
 
-image::/Assets/Images/Pasted image 20240711074105.png[branch1,title="Branch Explanation ^[1]^"]
-image::/Assets/Images/Pasted image 20240711074149.png[branch2,title="Branch Explanation ^[2]^"]
+image::Assets/Images/Branch.png[Branch,title="Branch"]
+image::Assets/Images/newBranch.png[newBranch,title="newBranch"]
 
 ##### Merge strategies - When to use each (+ Interactive rebase / Squash)
 
@@ -226,7 +226,7 @@ For the sake of simplicity we will mostly focus on those basic "Porcelain" Comma
 
 #### Socia Naming Conventions
 
-Now we arre heading into the territory of project specific conventions.
+Now we are heading into the territory of project specific conventions.
 These are meant to be specified once and EVERYONE in the team should to work around them.
 
 1. Commit Naming
@@ -258,7 +258,8 @@ As their content is linked to the issue definition we found that indexing such b
 
 ***BEST PRACTICE:***
 Use this template to create the ticket:
-image::/Assets/Images/Pasted image 20240711082139.png[ticket_reference,title="Title Reference ^[1]^"]
+
+image::Assets/Images/TechnicalFeature.png[BugReport,title="BugReport"]
 
 `feature#<Ticket-number>/<feature-name>`
 
@@ -272,7 +273,9 @@ Bug and Hotfixes are no actual features but rather code fixtures or completions 
 Their difference beeing that Hotfixes are direct reactions on top of the `main` branch and Bugfixes are made from the `dev` branch.
 ***BEST PRACTICE:***
 Use this template to create the ticket:
-image::/Assets/Images/Pasted image 20240711082116.png[ticket_reference2,title="Title Reference ^[2]^"]
+
+
+image::Assets/Images/BugReport.png[BugReport,title="BugReport"]
 
 `bugfix#<Bugfix-ticketnumber>/<bugfix-name>`
 
@@ -285,7 +288,9 @@ For Example :
 3. Issue Naming
 
 Creating a new Issue should be relatively straight forward.
-![[Pasted image 20240711081954.png]]
+
+image::Assets/Images/newIssue.png[Issue naming,title="Issue naming"]
+
 Afterwards Choose your template of choice and start describing your desired Product state.
 The Issues names should ALWAYS represent the feature they are representing.
 ***(Funny names do be allowed though)***
