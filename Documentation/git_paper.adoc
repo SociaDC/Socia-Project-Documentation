@@ -87,7 +87,7 @@ After commiting again, the new commit is getting pointed at by our new branch, w
 Because of that "diverging Branches" are just branches that focus on different commits, that somewhere had the same past (commit history).
 
 
-image::Assets/Images/CommitXBranch.png[Commit Structure,title="Commits"]
+image::Assets/Images/CommitXBranching.png[Commit Structure,title="Commits"]
 
 Each Branch header also has a unique SHA-1 hashed identifier.
 
