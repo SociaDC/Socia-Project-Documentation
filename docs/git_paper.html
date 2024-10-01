@@ -8,6 +8,7 @@
 <meta name="description" content="Git Guide">
 <title>Git &amp; Conventions</title>
 <link rel="stylesheet" href="assets/theme.css">
+<link rel="stylesheet" href="assets/rouge-github.css">
 </head>
 <body class="article">
 <div id="header">
@@ -102,7 +103,7 @@ The Git system is always initalized by using the command</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ git init</code></pre>
+<pre class="rouge highlight"><code data-lang="bash"><span class="nv">$ </span>git init</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -308,7 +309,7 @@ This prevents the git system to cause merge commits when pulling in remote chang
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">git config --global pull.rebase true</code></pre>
+<pre class="rouge highlight"><code data-lang="bash">git config <span class="nt">--global</span> pull.rebase <span class="nb">true</span></code></pre>
 </div>
 </div>
 <div class="sect3">
@@ -441,7 +442,7 @@ Please always provide a descriptive name of the fullfilled task as well as a des
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">git commit -m ""</code></pre>
+<pre class="rouge highlight"><code data-lang="bash">git commit <span class="nt">-m</span> <span class="s2">""</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -450,7 +451,7 @@ You are not that guy. Use this instead</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">git commit</code></pre>
+<pre class="rouge highlight"><code data-lang="bash">git commit</code></pre>
 </div>
 </div>
 <div class="olist arabic">
@@ -560,7 +561,7 @@ Rather than deleting the old one we will create a second entry in our "remote" e
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>$ git init
+<pre class="rouge highlight"><code>$ git init
 $ git remote add origin [registrylink]</code></pre>
 </div>
 </div>
@@ -570,7 +571,7 @@ All we have to do is add our new repository (preferrably with a name like "gitea
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>$ git remote add gitea [repository reference]</code></pre>
+<pre class="rouge highlight"><code>$ git remote add gitea [repository reference]</code></pre>
 </div>
 </div>
 </div>

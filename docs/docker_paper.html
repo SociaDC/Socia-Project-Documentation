@@ -8,6 +8,7 @@
 <meta name="description" content="Docker Guide">
 <title>Docker usage &amp; Best Practices</title>
 <link rel="stylesheet" href="assets/theme.css">
+<link rel="stylesheet" href="assets/rouge-github.css">
 </head>
 <body class="article">
 <div id="header">
@@ -112,17 +113,17 @@ If you want to check it out the link will be provided below.</p>
 <h3 id="_dockerfile_structure">Dockerfile Structure</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-Dockerfile" data-lang="Dockerfile">FROM image:tag
+<pre class="rouge highlight"><code data-lang="Dockerfile"><span class="k">FROM</span><span class="s"> image:tag</span>
 
-RUN sh command xy
+<span class="k">RUN </span>sh <span class="nb">command </span>xy
 
-ENTRYPOINT ["",""] #entrypoint for built image / Not Changable
+<span class="k">ENTRYPOINT</span><span class="s"> ["",""] #entrypoint for built image / Not Changable</span>
 
-COPY . . #From To
+<span class="k">COPY</span><span class="s"> . . #From To</span>
 
-# Makes the specified ports accessable to the containers outside (Localhost)
-EXPOSE 80/tcp
-EXPOSE 80/udp</code></pre>
+<span class="c"># Makes the specified ports accessable to the containers outside (Localhost)</span>
+<span class="k">EXPOSE</span><span class="s"> 80/tcp</span>
+<span class="k">EXPOSE</span><span class="s"> 80/udp</span></code></pre>
 </div>
 </div>
 <div class="sect3">
@@ -145,23 +146,23 @@ Instead of maintaining unnecessary ressources, this approach lets you aboard all
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-dockerfile" data-lang="dockerfile">FROM openjdk:22 as builder
-LABEL maintainer="Philipp Cserich, Thomas Boigner"
-ARG JAR_FILE=target/*.jar
-COPY ${JAR_FILE} application.jar
-RUN java -Djarmode=layertools -jar application.jar extract
+<pre class="rouge highlight"><code data-lang="dockerfile"><span class="k">FROM</span><span class="w"> </span><span class="s">openjdk:22</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="s">builder</span>
+<span class="k">LABEL</span><span class="s"> maintainer="Philipp Cserich, Thomas Boigner"</span>
+<span class="k">ARG</span><span class="s"> JAR_FILE=target/*.jar</span>
+<span class="k">COPY</span><span class="s"> ${JAR_FILE} application.jar</span>
+<span class="k">RUN </span>java <span class="nt">-Djarmode</span><span class="o">=</span>layertools <span class="nt">-jar</span> application.jar extract
 
-FROM openjdk:22
-LABEL maintainer="Philipp Cserich, Thomas Boigner"
-COPY --from=builder dependencies/ ./
-RUN true
-# COPY --from=builder internal-dependencies/ ./
-COPY --from=builder snapshot-dependencies/ ./
-RUN true
-COPY --from=builder spring-boot-loader/ ./
-RUN true
-COPY --from=builder application/ ./
-ENTRYPOINT ["java", "org.springframework.boot.loader.launch.JarLauncher"]</code></pre>
+<span class="k">FROM</span><span class="s"> openjdk:22</span>
+<span class="k">LABEL</span><span class="s"> maintainer="Philipp Cserich, Thomas Boigner"</span>
+<span class="k">COPY</span><span class="s"> --from=builder dependencies/ ./</span>
+<span class="k">RUN </span><span class="nb">true</span>
+<span class="c"># COPY --from=builder internal-dependencies/ ./</span>
+<span class="k">COPY</span><span class="s"> --from=builder snapshot-dependencies/ ./</span>
+<span class="k">RUN </span><span class="nb">true</span>
+<span class="k">COPY</span><span class="s"> --from=builder spring-boot-loader/ ./</span>
+<span class="k">RUN </span><span class="nb">true</span>
+<span class="k">COPY</span><span class="s"> --from=builder application/ ./</span>
+<span class="k">ENTRYPOINT</span><span class="s"> ["java", "org.springframework.boot.loader.launch.JarLauncher"]</span></code></pre>
 </div>
 </div>
 </div>
@@ -183,7 +184,7 @@ For example the service <strong>APP1</strong> needs to call the service <strong>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-shell" data-lang="shell">ping APP2:8080</code></pre>
+<pre class="rouge highlight"><code data-lang="shell">ping APP2:8080</code></pre>
 </div>
 </div>
 </div>
@@ -201,12 +202,12 @@ This includes files for startup configurations or other db / persistent files.</
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-yaml" data-lang="yaml">service:
-  volumes: # Persistent data
-      - volume-name:/var/lib/mysql
-volumes:
-  volume-name: #Can also be empty
-    driver: local #Optional spec</code></pre>
+<pre class="rouge highlight"><code data-lang="yaml"><span class="na">service</span><span class="pi">:</span>
+  <span class="na">volumes</span><span class="pi">:</span> <span class="c1"># Persistent data</span>
+      <span class="pi">-</span> <span class="s">volume-name:/var/lib/mysql</span>
+<span class="na">volumes</span><span class="pi">:</span>
+  <span class="na">volume-name</span><span class="pi">:</span> <span class="c1">#Can also be empty</span>
+    <span class="na">driver</span><span class="pi">:</span> <span class="s">local</span> <span class="c1">#Optional spec</span></code></pre>
 </div>
 </div>
 </div>
@@ -220,7 +221,7 @@ volumes:
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-10-01 20:07:47 UTC
+Last updated 2024-10-01 20:25:01 UTC
 </div>
 </div>
 </body>
