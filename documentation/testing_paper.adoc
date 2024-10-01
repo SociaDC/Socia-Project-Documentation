@@ -1,0 +1,38 @@
+
+= Software Testing and its variations
+:toc:
+:toc-title: Table of Contents
+:toclevels: 4
+:description: Software Testing Guide
+
+== Introduction
+Author : Philipp Cserich
+
+Date : 08.07.2024
+
+---
+
+This Testing guide is written for Socia/Phobos developers only, all usages or publications outside of project reach are not allowed and therefore this document restrains in terms restricted access.
+
+
+=== Test types
+
+- Unittests
+- Propertytests
+- Architecturetests
+- End to End tests
+- Integrationtests
+
+
+==== Unittests
+[TODO]
+
+==== Property based testing and its random nature
+[TODO]
+
+==== End to end tests
+[TODO]
+
+==== Integration tests
+[TODO]
+

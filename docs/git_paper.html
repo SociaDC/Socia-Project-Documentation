@@ -5,17 +5,48 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.23">
-<title>Git (Topics)</title>
+<meta name="description" content="Git Guide">
+<title>Git &amp; Conventions</title>
 <link rel="stylesheet" href="assets/theme.css">
 </head>
 <body class="article">
 <div id="header">
+<h1>Git &amp; Conventions</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_introduction">Introduction</a>
+<ul class="sectlevel2">
+<li><a href="#_once_upon_a_git">Once upon a Git.</a>
+<ul class="sectlevel3">
+<li><a href="#_structure_of_git_big_boy_remote_origin">Structure of Git (Big boy - Remote , Origin &#8230;&#8203;)</a></li>
+<li><a href="#_what_is_a_commit">What is a Commit</a></li>
+<li><a href="#_what_is_a_branch">What is a Branch</a></li>
+<li><a href="#_what_are_branches_and_how_to_create_delete_them">What are Branches and how to create / Delete Them</a></li>
+<li><a href="#_merge_strategies_when_to_use_each_interactive_rebase_squash">Merge strategies - When to use each (+ Interactive rebase / Squash)</a></li>
+</ul>
+</li>
+<li><a href="#_project_usage">Project usage</a>
+<ul class="sectlevel3">
+<li><a href="#_how_to_use_git_in_github">How to use git in Github</a></li>
+<li><a href="#_socia_naming_conventions">Socia Naming Conventions</a></li>
+</ul>
+</li>
+<li><a href="#_accessing_the_correct_registry">Accessing the Correct Registry</a></li>
+</ul>
+</li>
+<li><a href="#_author_contact_person">Author / Contact Person</a>
+<ul class="sectlevel2">
+<li><a href="#_links_ressources">Links &amp; Ressources</a></li>
+</ul>
+</li>
+</ul>
+</div>
 </div>
 <div id="content">
-<div class="sect2">
-<h3 id="_git_topics">Git (Topics)</h3>
-<div class="sect3">
-<h4 id="_introduction">Introduction</h4>
+<div class="sect1">
+<h2 id="_introduction">Introduction</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Author : Philipp Cserich</p>
 </div>
@@ -24,11 +55,10 @@
 </div>
 <hr>
 <div class="paragraph">
-<p>This Git guide is written for Socia developers only, all usages or publications outside of project reach are not allowed and therefore this document restrains in terms restricted access.</p>
+<p>This Git guide is written for Socia/Phobos developers only, all usages or publications outside of project reach are not allowed and therefore this document restrains in terms restricted access.</p>
 </div>
-</div>
-<div class="sect3">
-<h4 id="_once_upon_a_git">Once upon a Git.</h4>
+<div class="sect2">
+<h3 id="_once_upon_a_git">Once upon a Git.</h3>
 <div class="paragraph">
 <p>Git as it is today is a distributed version control system, created for code collaboration processes.
 Todays developers are using tools such as GitHub, GitLab or even BitBucket, but what if i tell you that those iterations of version management platforms are not implementing the core principles of git? What if i tell you that the "Inventor" of git, the allmighty Linus Torvald was so fed up by the idea of a centraliced code collab service that he tried to develop his own system?</p>
@@ -60,7 +90,6 @@ Complex branching and merging should be included</p>
 <div class="paragraph">
 <p>These Objectives formed the idea of <strong>"Git"</strong> which has been published since 2005.
 You will later see how linus torvald intended the system to be used.</p>
-</div>
 </div>
 <div class="sect3">
 <h4 id="_structure_of_git_big_boy_remote_origin">Structure of Git (Big boy - Remote , Origin &#8230;&#8203;)</h4>
@@ -109,8 +138,9 @@ While tags are literal pointers that are used to highlight one specific commit a
 <p>Originally linus torvald intended the system to work without any centralized Server that is responsible to store all of the developers data.
 In his mind, developers would send their requests, commits and branches from one pc to another, so that any developer is able to access their state of the application without using such server.</p>
 </div>
-<div class="sect4">
-<h5 id="_what_is_a_commit">What is a Commit</h5>
+</div>
+<div class="sect3">
+<h4 id="_what_is_a_commit">What is a Commit</h4>
 <div class="paragraph">
 <p>Commits are Nodes that save changed information.
 They always except for one time have to be based on another commit.</p>
@@ -127,8 +157,8 @@ This RSA id includes the information of date, author, changed content as well as
 As each file would be repetetive to save, git just saves the changes of each individual file, therefore each commit is necessary to rebuild the whole application.</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_what_is_a_branch">What is a Branch</h5>
+<div class="sect3">
+<h4 id="_what_is_a_branch">What is a Branch</h4>
 <div class="paragraph">
 <p>The concept of a branch is always visually displayed by a stream of commits.
 In theory that would be correct, but its technical realization looks a bit different.
@@ -151,8 +181,8 @@ Because of that "diverging Branches" are just branches that focus on different c
 <p>Each Branch header also has a unique SHA-1 hashed identifier.</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_what_are_branches_and_how_to_create_delete_them">What are Branches and how to create / Delete Them</h5>
+<div class="sect3">
+<h4 id="_what_are_branches_and_how_to_create_delete_them">What are Branches and how to create / Delete Them</h4>
 <div class="paragraph">
 <p>In a real scenario you are able to create branches in two ways.
 By using the cli in which you have to create the branch by hand.
@@ -175,8 +205,8 @@ By using the cli in which you have to create the branch by hand.
 <div class="title">Figure 5. newBranch</div>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_merge_strategies_when_to_use_each_interactive_rebase_squash">Merge strategies - When to use each (+ Interactive rebase / Squash)</h5>
+<div class="sect3">
+<h4 id="_merge_strategies_when_to_use_each_interactive_rebase_squash">Merge strategies - When to use each (+ Interactive rebase / Squash)</h4>
 <div class="paragraph">
 <p>We have already discussed what branches are and how they work.
 But we have not solved the question, what benefits they should provide for the development team.</p>
@@ -252,8 +282,8 @@ But what should i do when i am done developing a feature in my branch?</p>
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_project_use">Project use :</h4>
+<div class="sect2">
+<h3 id="_project_usage">Project usage</h3>
 <div class="paragraph">
 <p>In our projects our team should mainly use the squash and fast forward technique.
 Therefore no "ugly" merge commits are getting created and your version history stays clean.
@@ -279,7 +309,6 @@ This prevents the git system to cause merge commits when pulling in remote chang
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-bash" data-lang="bash">git config --global pull.rebase true</code></pre>
-</div>
 </div>
 </div>
 <div class="sect3">
@@ -520,15 +549,44 @@ The Issues names should ALWAYS represent the feature they are representing.
 </div>
 </div>
 <div class="sect2">
-<h3 id="_author_contact_person">Author / Contact Person</h3>
+<h3 id="_accessing_the_correct_registry">Accessing the Correct Registry</h3>
+<div class="paragraph">
+<p>In our case the normal Registry of github is not the way to go. Because of more advanced features of git servers, especially CICD related, we decided to move to a privately hosted instance of Gitea.
+You do not need to remove your remote connection that currently exists to Github.
+Rather than deleting the old one we will create a second entry in our "remote" entries.</p>
+</div>
+<div class="paragraph">
+<p>You might know the syntax from adding remote access such as :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ git init
+$ git remote add origin [registrylink]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this example the keyword origin is not actually a magic keyword but rather the default naming of a remote repository reference.
+All we have to do is add our new repository (preferrably with a name like "gitea")</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ git remote add gitea [repository reference]</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_author_contact_person">Author / Contact Person</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>If you have any questions, you can contact me.</p>
 </div>
 <div class="paragraph">
 <p><a href="mailto:Philipp.cserich@gmail.com">Philipp.cserich@gmail.com</a> || +436706059019</p>
 </div>
-<div class="sect3">
-<h4 id="_links_ressources">Links &amp; Ressources</h4>
+<div class="sect2">
+<h3 id="_links_ressources">Links &amp; Ressources</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -542,9 +600,10 @@ The Issues names should ALWAYS represent the feature they are representing.
 </div>
 </div>
 </div>
+</div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-10-01 16:06:15 UTC
+Last updated 2024-10-01 19:30:07 UTC
 </div>
 </div>
 </body>

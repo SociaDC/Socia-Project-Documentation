@@ -1,15 +1,21 @@
-### Git (Topics)
 
-#### Introduction 
+= Git & Conventions
+:toc:
+:toc-title: Table of Contents
+:toclevels: 4
+:description: Git Guide
+
+== Introduction
 Author : Philipp Cserich
 
 Date : 08.07.2024
 
 ---
 
-This Git guide is written for Socia developers only, all usages or publications outside of project reach are not allowed and therefore this document restrains in terms restricted access.
+This Git guide is written for Socia/Phobos developers only, all usages or publications outside of project reach are not allowed and therefore this document restrains in terms restricted access.
 
-#### Once upon a Git.
+
+=== Once upon a Git.
 Git as it is today is a distributed version control system, created for code collaboration processes.
 Todays developers are using tools such as GitHub, GitLab or even BitBucket, but what if i tell you that those iterations of version management platforms are not implementing the core principles of git? What if i tell you that the "Inventor" of git, the allmighty Linus Torvald was so fed up by the idea of a centraliced code collab service that he tried to develop his own system?
 
@@ -72,7 +78,7 @@ image::assets/images/GitFlow.png[Git Areas,title="Git Areas",width="600"]
 Originally linus torvald intended the system to work without any centralized Server that is responsible to store all of the developers data.
 In his mind, developers would send their requests, commits and branches from one pc to another, so that any developer is able to access their state of the application without using such server.
 
-##### What is a Commit 
+==== What is a Commit
 Commits are Nodes that save changed information.
 They always except for one time have to be based on another commit.
 
@@ -82,7 +88,7 @@ A node also contains, a rsa id which is used to identify the signed commit.
 This RSA id includes the information of date, author, changed content as well as its predecessor which leads to a unique key identifier.
 As each file would be repetetive to save, git just saves the changes of each individual file, therefore each commit is necessary to rebuild the whole application.
 
-##### What is a Branch
+==== What is a Branch
 The concept of a branch is always visually displayed by a stream of commits.
 In theory that would be correct, but its technical realization looks a bit different.
 Commits are never meant to save their predestined branch, as one commit can be present in multiple branches. 
@@ -100,7 +106,7 @@ Each Branch header also has a unique SHA-1 hashed identifier.
 
 
 
-##### What are Branches and how to create / Delete Them
+==== What are Branches and how to create / Delete Them
 
 In a real scenario you are able to create branches in two ways.
 By using the cli in which you have to create the branch by hand.
@@ -113,7 +119,7 @@ or by creating it directly in the github web ui.
 image::assets/images/Branch.png[Branch,title="Branch",width="500"]
 image::assets/images/newBranch.png[newBranch,title="newBranch",width="500"]
 
-##### Merge strategies - When to use each (+ Interactive rebase / Squash)
+==== Merge strategies - When to use each (+ Interactive rebase / Squash)
 
 We have already discussed what branches are and how they work.
 But we have not solved the question, what benefits they should provide for the development team.
@@ -151,7 +157,7 @@ In this section git becomes a bit tricky, there are several branch merging strat
 
 With the use of `PRs` or `Pull Requests`, you are able to create such merge statements in a Github environment.
 
-#### Project use :
+=== Project usage
 In our projects our team should mainly use the squash and fast forward technique.
 Therefore no "ugly" merge commits are getting created and your version history stays clean.
 This vsh structure lets us work a bit different though.
@@ -172,7 +178,8 @@ This prevents the git system to cause merge commits when pulling in remote chang
 ```bash
 git config --global pull.rebase true
 ```
-#### How to use git in Github
+
+==== How to use git in Github
 
 The Git system has around 152 commands in total (1.7.11.3)
 Normally you will face around 30 of them which are known under the name "Porcelain" commands.
@@ -245,7 +252,7 @@ For the sake of simplicity we will mostly focus on those basic "Porcelain" Comma
     
     >**DON'T USE WITHOUT PERMISSION!!**
 
-#### Socia Naming Conventions
+==== Socia Naming Conventions
 
 Now we are heading into the territory of project specific conventions.
 These are meant to be specified once and EVERYONE in the team should to work around them.
@@ -319,13 +326,37 @@ Afterwards Choose your template of choice and start describing your desired Prod
 The Issues names should ALWAYS represent the feature they are representing.
 ***(Funny names do be allowed though)***
 
-### Author / Contact Person
+
+=== Accessing the Correct Registry
+
+In our case the normal Registry of github is not the way to go. Because of more advanced features of git servers, especially CICD related, we decided to move to a privately hosted instance of Gitea.
+You do not need to remove your remote connection that currently exists to Github.
+Rather than deleting the old one we will create a second entry in our "remote" entries.
+
+You might know the syntax from adding remote access such as :
+
+[source]
+----
+$ git init
+$ git remote add origin [registrylink]
+----
+
+In this example the keyword origin is not actually a magic keyword but rather the default naming of a remote repository reference.
+All we have to do is add our new repository (preferrably with a name like "gitea")
+
+[source]
+----
+$ git remote add gitea [repository reference]
+----
+
+
+== Author / Contact Person
 
 If you have any questions, you can contact me.
 
 Philipp.cserich@gmail.com || +436706059019
 
-#### Links & Ressources
+=== Links & Ressources
 
 - [History of Git - GeeksforGeeks](https://www.geeksforgeeks.org/history-of-git/)
 - [Git - A Short History of Git (git-scm.com)](https://git-scm.com/book/en/v2/Getting-Started-A-Short-History-of-Git)

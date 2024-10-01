@@ -1,0 +1,86 @@
+
+= Docker usage & Best Practices
+:toc:
+:toc-title: Table of Contents
+:toclevels: 4
+:description: Git Guide
+
+
+== Introduction
+Author : Philipp Cserich
+
+Date : 01.10.2024
+
+---
+
+This Docker guide is written for Socia developers only, all usages or publications outside of project reach are not allowed and therefore this document restrains in terms restricted access.
+
+
+== What is Docker
+If you are already familiar with Virtual Machines you will understand the concept of docker out of the box.
+
+Docker is basicly a lightweight VM, in normal language that means that docker provides a way to encapsulate your software into a so called container.
+Containers are Simulating the OS Layer of your PC without creating a virtual kernel. (Still uses existing ressources)
+This is especially usefull when thinking about reproducability.
+The saying "It works on my PC" will never be an excuse from now on, because once containerized a Software will always be able to maintain state unable of its undelying system.
+
+*(Ignore the fact that cost expensive containers will obviously not run on a shitty PC)*
+
+== How to use Docker / Useful commands and Installation
+
+Docker as a system is linux native. That requires Windows PCs to use the WSL.
+Our most powerful tools will be **$ docker run** and **$ docker build**
+
+Installing it can be done by using the official enterprise Software **Docker Desktop** or for any Open source lowers, **Podman Desktop** could be worth a try.
+
+== Dockerfile & Images
+
+A Dockerfile is Dockers soul. It creates one place where all necessary build information is stored.
+These infos will get used to build your application in every way you could possibly imagine.
+Want an NGINX got it! Or just a node Server? No Problem!
+
+This singular information dump is used by the docker daemon to create a technical blueprint that represents all requirements.
+The so called image. Therefore every Application that needs to run in a containerized environment needs an image.
+There are many ways to obtain such images. One would be to create your own with a custom dockerfile as explained before.
+But you can also choose one of the many prebuilt docker images from dockerhub.
+Dockerhub represents a marketplace for docker images, in all forms and colors.
+If you want to check it out the link will be provided below.
+
+https://hub.docker.com/
+
+The exact workflow for every containerization can be displayed as follows.
+
+Dockerfile -> Docker image -> Docker Container
+
+=== Dockerfile Structure
+
+[source,yaml]
+----
+FROM [image]:[tag]
+
+RUN [sh command xy]
+
+ENTRYPOINT ["",""] #entrypoint for built image / Not Changable
+----
+
+==== Single Stage Build
+
+==== Multi Stage Build
+
+Appart from building a docker env completely in one single session you can create something called a multi stage build dockerfile.
+This version of a dockerfile uses the copy feature to create necessary ressources over one session and execute them on the other.
+Instead of maintaining unnecessary ressources, this approach lets you aboard all unnecessary file mud that gets created when installing or creating your executable software.
+
+One example could be to build a maven application (Socia) with such approach.
+
+[source]
+----
+TODO
+----
+
+== Docker compose file
+
+
+== Volumes
+
+== Interactive Container Work
