@@ -60,7 +60,7 @@ When understanding how changes actually reach their destination you have to know
 - The repository (reached through **git commit .** )
 - The remote (external service => leaves your PC with **git push**)
 
-image::assets/images/GitFlow.png[Git Areas,title="Git Areas"]
+image::/assets/images/GitFlow.png[Git Areas,title="Git Areas"]
 
 Originally linus torvald intended the system to work without any centralized Server that is responsible to store all of the developers data.
 In his mind, developers would send their requests, commits and branches from one pc to another, so that any developer is able to access their state of the application without using such server.
@@ -69,7 +69,7 @@ In his mind, developers would send their requests, commits and branches from one
 Commits are Nodes that save changed information.
 They always except for one time have to be based on another commit.
 
-image::assets/images/Commit.png[Commit,title="Commit"]
+image::/assets/images/Commit.png[Commit,title="Commit"]
 
 A node also contains, a rsa id which is used to identify the signed commit.
 This RSA id includes the information of date, author, changed content as well as its predecessor which leads to a unique key identifier.
@@ -87,7 +87,7 @@ After commiting again, the new commit is getting pointed at by our new branch, w
 Because of that "diverging Branches" are just branches that focus on different commits, that somewhere had the same past (commit history).
 
 
-image::assets/images/CommitBranching.png[CommitStructure,title="Commit Structure"]
+image::/assets/images/CommitBranching.png[CommitStructure,title="Commit Structure"]
 
 Each Branch header also has a unique SHA-1 hashed identifier.
 
@@ -103,8 +103,8 @@ or by creating it directly in the github web ui.
 *Go to Branches > new Branch and choose your origin.*
 
 
-image::assets/images/Branch.png[Branch,title="Branch"]
-image::assets/images/newBranch.png[newBranch,title="newBranch"]
+image::/assets/images/Branch.png[Branch,title="Branch"]
+image::/assets/images/newBranch.png[newBranch,title="newBranch"]
 
 ##### Merge strategies - When to use each (+ Interactive rebase / Squash)
 
@@ -259,7 +259,7 @@ As their content is linked to the issue definition we found that indexing such b
 ***BEST PRACTICE:***
 Use this template to create the ticket:
 
-image::assets/images/TechnicalFeature.png[BugReport,title="BugReport"]
+image::/assets/images/TechnicalFeature.png[BugReport,title="BugReport"]
 
 `feature#<Ticket-number>/<feature-name>`
 
@@ -275,7 +275,7 @@ Their difference beeing that Hotfixes are direct reactions on top of the `main` 
 Use this template to create the ticket:
 
 
-image::assets/images/BugReport.png[BugReport,title="BugReport"]
+image::/assets/images/BugReport.png[BugReport,title="BugReport"]
 
 `bugfix#<Bugfix-ticketnumber>/<bugfix-name>`
 
@@ -289,7 +289,7 @@ For Example :
 
 Creating a new Issue should be relatively straight forward.
 
-image::assets/images/newIssue.png[Issue naming,title="Issue naming"]
+image::/assets/images/newIssue.png[Issue naming,title="Issue naming"]
 
 Afterwards Choose your template of choice and start describing your desired Product state.
 The Issues names should ALWAYS represent the feature they are representing.
