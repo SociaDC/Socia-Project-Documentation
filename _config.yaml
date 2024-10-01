@@ -5,6 +5,12 @@ title: Team Knowledgebase
 description: Team documentation for Software Enginerring topics
 baseurl: ""
 
+defaults:
+  - scope:
+      path: "" # This applies to all pages
+    values:
+      permalink: /docs/:path/
+
 # Exclude certain files or directories from the build process
 exclude:
   - README.md
