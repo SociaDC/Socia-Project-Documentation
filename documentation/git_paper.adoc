@@ -106,8 +106,8 @@ or by creating it directly in the github web ui.
 *Go to Branches > new Branch and choose your origin.*
 
 
-image::assets/images/Branch.png[Branch,title="Branch"]
-image::assets/images/newBranch.png[newBranch,title="newBranch"]
+image::assets/images/Branch.png[Branch,title="Branch",width="500"]
+image::assets/images/newBranch.png[newBranch,title="newBranch",width="500"]
 
 ##### Merge strategies - When to use each (+ Interactive rebase / Squash)
 
@@ -279,7 +279,7 @@ As their content is linked to the issue definition we found that indexing such b
 ***BEST PRACTICE:***
 Use this template to create the ticket:
 
-image::assets/images/TechnicalFeature.png[BugReport,title="BugReport"]
+image::assets/images/TechnicalFeature.png[BugReport,title="BugReport",width="500"]
 
 `feature#<Ticket-number>/<feature-name>`
 
@@ -295,7 +295,7 @@ Their difference beeing that Hotfixes are direct reactions on top of the `main` 
 Use this template to create the ticket:
 
 
-image::assets/images/BugReport.png[BugReport,title="BugReport"]
+image::assets/images/BugReport.png[BugReport,title="BugReport",width="500"]
 
 `bugfix#<Bugfix-ticketnumber>/<bugfix-name>`
 
@@ -309,7 +309,7 @@ For Example :
 
 Creating a new Issue should be relatively straight forward.
 
-image::assets/images/newIssue.png[Issue naming,title="Issue naming"]
+image::assets/images/newIssue.png[Issue naming,title="Issue naming",width="700"]
 
 Afterwards Choose your template of choice and start describing your desired Product state.
 The Issues names should ALWAYS represent the feature they are representing.
