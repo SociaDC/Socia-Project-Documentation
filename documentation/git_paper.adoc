@@ -1,8 +1,12 @@
 ### Git (Topics)
 
 #### Introduction 
-Author : Philipp Cserich 
+Author : Philipp Cserich
+
 Date : 08.07.2024
+
+---
+
 This Git guide is written for Socia developers only, all usages or publications outside of project reach are not allowed and therefore this document restrains in terms restricted access.
 
 #### Once upon a Git.
