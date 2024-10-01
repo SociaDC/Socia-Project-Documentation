@@ -3,7 +3,7 @@
 :toc:
 :toc-title: Table of Contents
 :toclevels: 4
-:description: Git Guide
+:description: Docker Guide
 
 
 == Introduction
@@ -13,7 +13,7 @@ Date : 01.10.2024
 
 ---
 
-This Docker guide is written for Socia developers only, all usages or publications outside of project reach are not allowed and therefore this document restrains in terms restricted access.
+This Docker guide is written for Socia/Phobos developers only, all usages or publications outside of project reach are not allowed and therefore this document restrains in terms restricted access.
 
 
 == What is Docker
@@ -82,13 +82,30 @@ Instead of maintaining unnecessary ressources, this approach lets you aboard all
 
 One example could be to build a maven application (Socia) with such approach.
 
-[source]
+[source,dockerfile]
 ----
-TODO
+FROM openjdk:22 as builder
+LABEL maintainer="Philipp Cserich, Thomas Boigner"
+ARG JAR_FILE=target/*.jar
+COPY ${JAR_FILE} application.jar
+RUN java -Djarmode=layertools -jar application.jar extract
+
+FROM openjdk:22
+LABEL maintainer="Philipp Cserich, Thomas Boigner"
+COPY --from=builder dependencies/ ./
+RUN true
+# COPY --from=builder internal-dependencies/ ./
+COPY --from=builder snapshot-dependencies/ ./
+RUN true
+COPY --from=builder spring-boot-loader/ ./
+RUN true
+COPY --from=builder application/ ./
+ENTRYPOINT ["java", "org.springframework.boot.loader.launch.JarLauncher"]
 ----
 
 == Docker compose file
-[TODO]
+Docker compose is used to create a more broad service structure and simple way to start multiple services that need to cooperate with eachother.
+
 
 
 === Docker network
