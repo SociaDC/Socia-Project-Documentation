@@ -22,4 +22,4 @@
 2. link:git_paper[Git & Conventions]
 3. link:docker_paper.adoc[Docker instructable]
 4. link:testing_paper.adoc[Testing and its variations]
-5. link:git_paper[Gitops principle - Living out of git]
+5. link:gitops_paper.adoc[Gitops principle - Living out of git]
