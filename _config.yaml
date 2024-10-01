@@ -24,7 +24,7 @@ sass:
   sass_dir: _sass
 
 # Include custom styles
-custom_css: /assets/styles.css
+custom_css: /assets/theme.css
 
 # Enable GitHub Pages plugins (optional)
 plugins:
