@@ -2,6 +2,14 @@
 :doctype: book 
 :preface-title: Preface
 
+# Socia
+
+### Team
+- Boigner Thomas
+- Cserich Philipp
+- Hammerer Max
+- Benüüü
+
 
 //Activating some features
 //  Mathematical Equasions
