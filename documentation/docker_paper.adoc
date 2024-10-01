@@ -54,16 +54,25 @@ Dockerfile -> Docker image -> Docker Container
 
 === Dockerfile Structure
 
-[source,yaml]
+[source,Dockerfile]
 ----
-FROM [image]:[tag]
+FROM image:tag
 
-RUN [sh command xy]
+RUN sh command xy
 
 ENTRYPOINT ["",""] #entrypoint for built image / Not Changable
+
+COPY . . #From To
+
+# Makes the specified ports accessable to the containers outside (Localhost)
+EXPOSE 80/tcp
+EXPOSE 80/udp
 ----
 
 ==== Single Stage Build
+Normally you will just include all necessary steps to install the env. as needed in one stage.
+This is the easier route of creating images, because of its straight nature.
+The build normally also includes all unnecessary build / installation step files such as node module folders or java dependency packages.
 
 ==== Multi Stage Build
 
@@ -79,8 +88,32 @@ TODO
 ----
 
 == Docker compose file
+[TODO]
 
+
+=== Docker network
+Containers normally all have their own localhost running internally, therfore service structures can no longer work by calling the localhost.
+The solutions are docker networks. They group the containers logically, so that they can reach each other per DNS entry over their service name.
+For example the service **APP1** needs to call the service **APP2** over the port 8080. to do that it has to use
+
+[source,shell]
+----
+ping APP2:8080
+----
 
 == Volumes
+Volumes are persistent modules which have to maintain outside of the containers runtime.
+This includes files for startup configurations or other db / persistent files.
+
+They are specified by using :
+[source,yaml]
+----
+service:
+  volumes: # Persistent data
+      - volume-name:/var/lib/mysql
+volumes:
+  volume-name: #Can also be empty
+    driver: local #Optional spec
+----
 
 == Interactive Container Work

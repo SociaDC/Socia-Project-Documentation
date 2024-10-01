@@ -18,7 +18,7 @@
 ### Table of Contents
 
 ---
-1. link:project_structure[Project Structuring]
+1. link:project_structure[Project Base Structure]
 2. link:git_paper[Git & Conventions]
 3. link:docker_paper[Docker instructable]
 4. link:testing_paper[Testing and its variations]
