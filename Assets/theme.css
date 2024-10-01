@@ -21,8 +21,10 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.2; /* line-height */
     margin-bottom: 10px; /* margin-bottom */
 }
-
 /* Link Styles */
 a {
     color: #0000ff; /* font-color for links */
+}
+body{
+    margin: 10%;
 }

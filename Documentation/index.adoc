@@ -7,7 +7,7 @@
 //  Mathematical Equasions
 :stem: 
 
-Table of Contents
+### Table of Contents
 
 ---
 1. link:project_structure[Project Structuring]
