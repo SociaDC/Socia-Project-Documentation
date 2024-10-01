@@ -54,6 +54,7 @@ a:hover {
 /* Code Blocks */
 pre, code {
     padding: 10px;
+    background-color: transparent ;
     border-radius: 5px;
     font-family: 'Courier New', Courier, monospace;
     font-size: 0.95em;
@@ -61,7 +62,6 @@ pre, code {
 }
 
 code {
-    background-color: #f5f5f5;
     padding: 2px 5px;
 }
 
