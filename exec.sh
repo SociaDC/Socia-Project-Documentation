@@ -9,5 +9,5 @@ docker run --rm --name=diplomathesis --workdir="" -it \
   -v $project_root/docs:/docs \
   asciidoctor/docker-asciidoctor \
   find /documentation -name '*.adoc' -exec asciidoctor \
-  -a stylesdir=/assets -a stylesheet=/assets/theme.css -a linkcss=true -a outfilesuffix=.html \
+  -a stylesdir=assets -a stylesheet=theme.css -a linkcss=true -a outfilesuffix=.html \
   -D /docs {} \;
