@@ -1,0 +1,28 @@
+/* Base Styles */
+body {
+    color: #000000; /* font-color */
+}
+
+/* Footer Styles */
+@page {
+    @bottom-right {
+        content: "Documentation - Team Socia";
+    }
+    @bottom-left {
+        content: "Documentation - Team Socia";
+    }
+}
+
+/* Heading Styles */
+h1, h2, h3, h4, h5, h6 {
+    color: #000000; /* font-color */
+    font-size: 17px; /* font-size */
+    font-weight: bold; /* font-style */
+    line-height: 1.2; /* line-height */
+    margin-bottom: 10px; /* margin-bottom */
+}
+
+/* Link Styles */
+a {
+    color: #0000ff; /* font-color for links */
+}
