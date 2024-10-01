@@ -39,8 +39,11 @@ You will later see how linus torvald intended the system to be used.
 (Example where i create a git repo by hand without git init...)
 
 Before we start digging into specific commandlets and execution examples, we have to understand how git operates.
-The Git system is always initalized by using the command 
->$ git init
+The Git system is always initalized by using the command
+
+```bash
+$ git init
+```
 
 This command is mostly responsible to prepare to operation environment of git.
 It includes the creation of a .git repository, as well as the subdirectories **refs/tags, refs/heads and objects**.
@@ -60,7 +63,7 @@ When understanding how changes actually reach their destination you have to know
 - The repository (reached through **git commit .** )
 - The remote (external service => leaves your PC with **git push**)
 
-image::assets/images/GitFlow.png[Git Areas,title="Git Areas"]
+image::assets/images/GitFlow.png[Git Areas,title="Git Areas",width="600"]
 
 Originally linus torvald intended the system to work without any centralized Server that is responsible to store all of the developers data.
 In his mind, developers would send their requests, commits and branches from one pc to another, so that any developer is able to access their state of the application without using such server.
@@ -69,7 +72,7 @@ In his mind, developers would send their requests, commits and branches from one
 Commits are Nodes that save changed information.
 They always except for one time have to be based on another commit.
 
-image::assets/images/Commit.png[Commit,title="Commit"]
+image::assets/images/Commit.png[Commit,title="Commit",width="300"]
 
 A node also contains, a rsa id which is used to identify the signed commit.
 This RSA id includes the information of date, author, changed content as well as its predecessor which leads to a unique key identifier.
@@ -87,7 +90,7 @@ After commiting again, the new commit is getting pointed at by our new branch, w
 Because of that "diverging Branches" are just branches that focus on different commits, that somewhere had the same past (commit history).
 
 
-image::assets/images/CommitBranching.png[CommitStructure,title="Commit Structure"]
+image::assets/images/CommitBranching.png[CommitStructure,title="Commit Structure",width="500"]
 
 Each Branch header also has a unique SHA-1 hashed identifier.
 
@@ -175,39 +178,51 @@ For the sake of simplicity we will mostly focus on those basic "Porcelain" Comma
 - **`git init`**:
     
     - Initializes a new Git repository in the current directory.
+
 - **`git clone <repository-url>`**:
     
     - Creates a copy of an existing repository from the given URL to your local machine.
+
 - **`git status`**:
     
     - Shows the current status of the working directory and the staging area, including changes that are staged for commit, changes that are not staged, and untracked files.
+
 - **`git add <file>`**:
     
     - Adds a file to the staging area, making it ready to be committed. Use `.` to add all changes.
+
 - **`git commit -m "<message>"`**:
     
     - Records changes to the repository with a descriptive message.
+
 - **`git log`**:
     
     - Displays a list of all the commits in the repository's history.
+
 - **`git diff`**:
     
     - Shows the differences between the working directory and the staging area, or between commits.
+
 - **`git branch`**:
     
     - Lists all branches in the repository. When used with a branch name, it creates a new branch.
+
 - **`git checkout <branch>`**:
     
     - Switches to the specified branch and updates the working directory to match it.
+
 - **`git merge <branch>`**:
     
     - Combines the specified branch's history into the current branch.
+
 - **`git pull`**:
     
     - Fetches changes from a remote repository and merges them into the current branch.
+
 - **`git push`**:
     
     - Uploads local commits to a remote repository.
+
 - **`git remote -v`**:
     
     - Shows the URLs of the remote repositories for your project.
@@ -215,9 +230,11 @@ For the sake of simplicity we will mostly focus on those basic "Porcelain" Comma
 - **`git remote add <remoteName> <remoteURL>`**:
     
     - Adds a new Remote Repository destination into your git context.
+
 - **`git fetch`**:
     
     - Downloads objects and refs from a remote repository, but does not integrate them into your current branch.
+
 - **`git reset --hard <commit>`**:
 	
     - Resets the current branch to the specified commit, discarding all changes in the working directory and staging area.
@@ -231,11 +248,14 @@ These are meant to be specified once and EVERYONE in the team should to work aro
 
 1. Commit Naming
 Please always provide a descriptive name of the fullfilled task as well as a description.
+
 ```bash
 git commit -m ""
 ```
-Doesn't miss you. 
+
+Doesn't miss you.
 You are not that guy. Use this instead
+
 ```bash
 git commit
 ```
@@ -295,6 +315,7 @@ Afterwards Choose your template of choice and start describing your desired Prod
 The Issues names should ALWAYS represent the feature they are representing.
 ***(Funny names do be allowed though)***
 
+### Author / Contact Person
 
 If you have any questions, you can contact me.
 
