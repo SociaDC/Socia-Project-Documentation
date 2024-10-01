@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.23">
-<meta name="description" content="Git Guide">
+<meta name="description" content="Docker Guide">
 <title>Docker usage &amp; Best Practices</title>
 <link rel="stylesheet" href="assets/theme.css">
 </head>
@@ -28,7 +28,11 @@
 </li>
 </ul>
 </li>
-<li><a href="#_docker_compose_file">Docker compose file</a></li>
+<li><a href="#_docker_compose_file">Docker compose file</a>
+<ul class="sectlevel2">
+<li><a href="#_docker_network">Docker network</a></li>
+</ul>
+</li>
 <li><a href="#_volumes">Volumes</a></li>
 <li><a href="#_interactive_container_work">Interactive Container Work</a></li>
 </ul>
@@ -46,7 +50,7 @@
 </div>
 <hr>
 <div class="paragraph">
-<p>This Docker guide is written for Socia developers only, all usages or publications outside of project reach are not allowed and therefore this document restrains in terms restricted access.</p>
+<p>This Docker guide is written for Socia/Phobos developers only, all usages or publications outside of project reach are not allowed and therefore this document restrains in terms restricted access.</p>
 </div>
 </div>
 </div>
@@ -108,16 +112,26 @@ If you want to check it out the link will be provided below.</p>
 <h3 id="_dockerfile_structure">Dockerfile Structure</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-yaml" data-lang="yaml">FROM [image]:[tag]
+<pre class="highlight"><code class="language-Dockerfile" data-lang="Dockerfile">FROM image:tag
 
-RUN [sh command xy]
+RUN sh command xy
 
-ENTRYPOINT ["",""] #entrypoint for built image / Not Changable</code></pre>
+ENTRYPOINT ["",""] #entrypoint for built image / Not Changable
+
+COPY . . #From To
+
+# Makes the specified ports accessable to the containers outside (Localhost)
+EXPOSE 80/tcp
+EXPOSE 80/udp</code></pre>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_single_stage_build">Single Stage Build</h4>
-
+<div class="paragraph">
+<p>Normally you will just include all necessary steps to install the env. as needed in one stage.
+This is the easier route of creating images, because of its straight nature.
+The build normally also includes all unnecessary build / installation step files such as node module folders or java dependency packages.</p>
+</div>
 </div>
 <div class="sect3">
 <h4 id="_multi_stage_build">Multi Stage Build</h4>
@@ -131,7 +145,23 @@ Instead of maintaining unnecessary ressources, this approach lets you aboard all
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>TODO</code></pre>
+<pre class="highlight"><code class="language-dockerfile" data-lang="dockerfile">FROM openjdk:22 as builder
+LABEL maintainer="Philipp Cserich, Thomas Boigner"
+ARG JAR_FILE=target/*.jar
+COPY ${JAR_FILE} application.jar
+RUN java -Djarmode=layertools -jar application.jar extract
+
+FROM openjdk:22
+LABEL maintainer="Philipp Cserich, Thomas Boigner"
+COPY --from=builder dependencies/ ./
+RUN true
+# COPY --from=builder internal-dependencies/ ./
+COPY --from=builder snapshot-dependencies/ ./
+RUN true
+COPY --from=builder spring-boot-loader/ ./
+RUN true
+COPY --from=builder application/ ./
+ENTRYPOINT ["java", "org.springframework.boot.loader.launch.JarLauncher"]</code></pre>
 </div>
 </div>
 </div>
@@ -141,13 +171,44 @@ Instead of maintaining unnecessary ressources, this approach lets you aboard all
 <div class="sect1">
 <h2 id="_docker_compose_file">Docker compose file</h2>
 <div class="sectionbody">
-
+<div class="paragraph">
+<p>Docker compose is used to create a more broad service structure and simple way to start multiple services that need to cooperate with eachother.</p>
+</div>
+<div class="sect2">
+<h3 id="_docker_network">Docker network</h3>
+<div class="paragraph">
+<p>Containers normally all have their own localhost running internally, therfore service structures can no longer work by calling the localhost.
+The solutions are docker networks. They group the containers logically, so that they can reach each other per DNS entry over their service name.
+For example the service <strong>APP1</strong> needs to call the service <strong>APP2</strong> over the port 8080. to do that it has to use</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">ping APP2:8080</code></pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_volumes">Volumes</h2>
 <div class="sectionbody">
-
+<div class="paragraph">
+<p>Volumes are persistent modules which have to maintain outside of the containers runtime.
+This includes files for startup configurations or other db / persistent files.</p>
+</div>
+<div class="paragraph">
+<p>They are specified by using :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">service:
+  volumes: # Persistent data
+      - volume-name:/var/lib/mysql
+volumes:
+  volume-name: #Can also be empty
+    driver: local #Optional spec</code></pre>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -159,7 +220,7 @@ Instead of maintaining unnecessary ressources, this approach lets you aboard all
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-10-01 19:29:11 UTC
+Last updated 2024-10-01 20:07:47 UTC
 </div>
 </div>
 </body>
