@@ -24,7 +24,7 @@ Everything revolves around git Repos.
 This normally means that you have to include one seperate Repository that is responsible for holding configuration files for **ArgoCD** or **FluxCD**.
 
 But what exactly means building everything around a git repository?
-In the good old you would configure servers manually, that changed when kubernetes was introduced. Server configurations could be written beforehand and could get reused.
+In the good old times you would configure servers manually, that changed when kubernetes was introduced. Server configurations could be written beforehand and could get reused.
 This opened up a whole new spectrum of reusability.
 
 Sadly even in a kubernetes environment you are configuring the Deployments and "Servers" / Pods once and these files do not get stored externally.

@@ -13,7 +13,7 @@
 
 
 //Activating some features
-//  Mathematical Equasions
+//Mathematical Equasions
 :stem: 
 
 ### Table of Contents
