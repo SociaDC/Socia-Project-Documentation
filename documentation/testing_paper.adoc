@@ -6,9 +6,9 @@
 :description: Software Testing Guide
 
 == Introduction
-Author : Philipp Cserich
+Author : Philipp Cserich x Thomas Boigner
 
-Date : 08.07.2024
+Date : 02.10.2024
 
 ---
 
