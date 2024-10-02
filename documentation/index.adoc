@@ -3,13 +3,13 @@
 :preface-title: Preface
 :source-highlighter: rogue
 
-# Socia
+# Intro and applicability of Software concepts
 
 ### Team
 - Boigner Thomas
 - Cserich Philipp
 - Hammerer Max
-- Benüüü
+- Benjamin Beer
 
 
 //Activating some features
