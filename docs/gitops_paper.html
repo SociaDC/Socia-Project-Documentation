@@ -40,7 +40,34 @@
 </div>
 <div class="sect2">
 <h3 id="_what_is_gitops">What is Gitops</h3>
-
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Building Applications or Complete Structures all around Git!</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p><strong>"Config as Code done Right!"</strong></p>
+</div>
+<div class="paragraph">
+<p>Everything revolves around git Repos.
+This normally means that you have to include one seperate Repository that is responsible for holding configuration files for <strong>ArgoCD</strong> or <strong>FluxCD</strong>.</p>
+</div>
+<div class="paragraph">
+<p>But what exactly means building everything around a git repository?
+In the good old you would configure servers manually, that changed when kubernetes was introduced. Server configurations could be written beforehand and could get reused.
+This opened up a whole new spectrum of reusability.</p>
+</div>
+<div class="paragraph">
+<p>Sadly even in a kubernetes environment you are configuring the Deployments and "Servers" / Pods once and these files do not get stored externally.
+GitOps changes that. It requires all configuration files and service definitions to be saved in a "git" centered repository, which is then used as a reference for kubernetes.
+So even if an earthquake destroys our datacenter, we could reproduce all servers states, by recabling our git repo to another cluster.</p>
+</div>
+<div class="paragraph">
+<p>This revolves in the k8smaster needing to know and watch the state of all configuration files.
+ArgoCD and FluxCD do exactly that, they enable more accessable roleback strategies as well as instant updates whenever a new software version or config change hit.</p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_how_to_use_it">How to use it</h3>
@@ -51,7 +78,7 @@
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-10-01 19:30:51 UTC
+Last updated 2024-10-02 07:29:58 UTC
 </div>
 </div>
 </body>
