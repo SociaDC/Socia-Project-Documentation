@@ -82,3 +82,4 @@ The core concepts used will be listed below. Each Project member will have to be
 
 - DDD
 - BDD
+- TDD

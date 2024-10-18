@@ -136,3 +136,13 @@ volumes:
 ----
 
 == Interactive Container Work
+
+
+== Pushing Images
+
+=== Custom Registry
+
+== Links & Ressources
+
+- 01 [Dockerhub](https://hub.docker.com/)
+- 02 [Docker Documentation](https://docs.docker.com/)

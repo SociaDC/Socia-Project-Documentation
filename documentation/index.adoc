@@ -19,8 +19,11 @@
 ### Table of Contents
 
 ---
-1. link:project_structure[Project Base Structure]
-2. link:git_paper[Git & Conventions]
-3. link:docker_paper[Docker instructable]
-4. link:testing_paper[Testing and its variations]
-5. link:gitops_paper[Gitops principle - Living out of git]
+1. link:socia_linktree[Project Linktree]
+2. link:project_structure[Project Base Structure]
+3. link:git_paper[Git & Conventions]
+4. link:docker_paper[Docker instructable]
+5. link:testing_paper[Testing and its variations]
+6. link:api_architecture[API design & architecture]
+7. link:gitops_paper[Gitops principle - Living out of git]
+
