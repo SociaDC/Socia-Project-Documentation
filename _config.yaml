@@ -1,0 +1,42 @@
+# _config.yml
+
+# Site settings
+title: Team Knowledgebase
+description: Team documentation for Software Enginerring topics
+baseurl: ""
+
+defaults:
+  - scope:
+      path: "" # This applies to all pages
+    values:
+      permalink: /docs/:path/
+
+# Exclude certain files or directories from the build process
+exclude:
+  - README.md
+
+# Markdown configuration
+markdown: kramdown
+
+# Theme and styles
+theme: minima # You can use a theme, or leave it as default if you prefer.
+sass:
+  sass_dir: _sass
+
+# Include custom styles
+custom_css: /assets/theme.css
+
+# Enable GitHub Pages plugins (optional)
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Output configuration
+permalink: pretty # Creates clean URLs without `.html`
+
+# Options for markdown processing
+kramdown:
+  input: GFM
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true

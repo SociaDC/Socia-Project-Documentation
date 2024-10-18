@@ -1,0 +1,26 @@
+
+:doctype: book 
+:preface-title: Preface
+:source-highlighter: rogue
+
+# Intro and applicability of Software concepts
+
+### Team
+- Boigner Thomas
+- Cserich Philipp
+- Hammerer Max
+- Benjamin Beer
+
+
+//Activating some features
+//Mathematical Equasions
+:stem: 
+
+### Table of Contents
+
+---
+1. link:project_structure[Project Base Structure]
+2. link:git_paper[Git & Conventions]
+3. link:docker_paper[Docker instructable]
+4. link:testing_paper[Testing and its variations]
+5. link:gitops_paper[Gitops principle - Living out of git]

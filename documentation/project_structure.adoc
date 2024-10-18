@@ -1,0 +1,84 @@
+
+= Project Structure
+:toc:
+:toc-title: Table of Contents
+:toclevels: 4
+:description: Git Guide
+
+== Introduction
+Author : Philipp Cserich
+
+Date : 08.07.2024
+
+---
+
+This Project structure overview is written for Socia/Phobos developers only, all usages or publications outside of project reach are not allowed and therefore this document restrains in terms restricted access.
+
+
+image::assets/images/Structure.png[Structure,title="Project Structure"]
+
+
+=== Technologies
+[cols="1,2,1,1"]
+|===
+|Name
+|Description
+|Usage
+|Link
+
+
+|Git
+|Version Management System
+|ALL
+|
+
+
+|Docker
+|Containerization Tool
+|ALL
+|
+
+
+|Grafana
+|Visualization Engine for Logs & Metrics
+|Socia Server
+|https://grafana.com/grafana/
+
+
+|OpenTelemetry (OtelCollectors)
+|Log and Metrics push agent
+|TODO
+|https://opentelemetry.io/docs/collector/
+
+
+|Java
+|Programming Language
+|Socia Server / Phobos Backend
+|
+
+
+|Kotlin
+|Programming Language
+|Phobos Frontend
+|
+
+
+|Vue.js (ts)
+|Programming Language
+|Socia Frontend
+|
+
+
+|AsciiDoc
+|Documentation Engine
+|Socia Documentation (this)
+|
+
+|===
+
+
+=== Concepts
+The core concepts used will be listed below. Each Project member will have to be at least "great" knowledge on each of these topics.
+
+- DDD
+- BDD

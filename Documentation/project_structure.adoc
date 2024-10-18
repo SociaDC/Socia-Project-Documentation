@@ -1,3 +1,0 @@
-### Project Structure
-
-image::Assets/Images/Structure.png[Structure,title="Project Structure"]

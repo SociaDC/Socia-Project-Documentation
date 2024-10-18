@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Git Guide">
+<title>Project Structure</title>
+<link rel="stylesheet" href="assets/theme.css">
+</head>
+<body class="article">
+<div id="header">
+<h1>Project Structure</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_introduction">Introduction</a>
+<ul class="sectlevel2">
+<li><a href="#_technologies">Technologies</a></li>
+<li><a href="#_concepts">Concepts</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="_introduction">Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Author : Philipp Cserich</p>
+</div>
+<div class="paragraph">
+<p>Date : 08.07.2024</p>
+</div>
+<hr>
+<div class="paragraph">
+<p>This Project structure overview is written for Socia/Phobos developers only, all usages or publications outside of project reach are not allowed and therefore this document restrains in terms restricted access.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="assets/images/Structure.png" alt="Structure">
+</div>
+<div class="title">Figure 1. Project Structure</div>
+</div>
+<div class="sect2">
+<h3 id="_technologies">Technologies</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 40%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Usage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Link</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Git</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Version Management System</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ALL</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Docker</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Containerization Tool</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ALL</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Grafana</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Visualization Engine for Logs &amp; Metrics</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Socia Server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://grafana.com/grafana/" class="bare">https://grafana.com/grafana/</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OpenTelemetry (OtelCollectors)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Log and Metrics push agent</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TODO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://opentelemetry.io/docs/collector/" class="bare">https://opentelemetry.io/docs/collector/</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Java</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Programming Language</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Socia Server / Phobos Backend</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kotlin</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Programming Language</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Phobos Frontend</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vue.js (ts)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Programming Language</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Socia Frontend</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AsciiDoc</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Documentation Engine</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Socia Documentation (this)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_concepts">Concepts</h3>
+<div class="paragraph">
+<p>The core concepts used will be listed below. Each Project member will have to be at least "great" knowledge on each of these topics.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>DDD</p>
+</li>
+<li>
+<p>BDD</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2024-10-01 19:32:09 UTC
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Software Testing Guide">
+<title>Software Testing and its variations</title>
+<link rel="stylesheet" href="assets/theme.css">
+</head>
+<body class="article">
+<div id="header">
+<h1>Software Testing and its variations</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_introduction">Introduction</a></li>
+<li><a href="#_test_types">Test types</a>
+<ul class="sectlevel2">
+<li><a href="#_unittests">Unittests</a>
+<ul class="sectlevel3">
+<li><a href="#_example">Example</a></li>
+</ul>
+</li>
+<li><a href="#_end_to_end_tests">End to end tests</a></li>
+<li><a href="#_integration_tests">Integration tests</a></li>
+<li><a href="#_mocking">Mocking</a></li>
+<li><a href="#_example_based_testing">Example based testing</a></li>
+<li><a href="#_property_based_testing_and_its_random_nature">Property based testing and its random nature</a></li>
+</ul>
+</li>
+<li><a href="#_test_workflow">Test Workflow</a></li>
+<li><a href="#_code_coverage">Code Coverage</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="_introduction">Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Author : Philipp Cserich x Thomas Boigner</p>
+</div>
+<div class="paragraph">
+<p>Date : 02.10.2024</p>
+</div>
+<hr>
+<div class="paragraph">
+<p>This Testing guide is written for Socia/Phobos developers only, all usages or publications outside of project reach are not allowed and therefore this document restrains in terms restricted access.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_test_types">Test types</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Unittests</p>
+</li>
+<li>
+<p>Architecturetests</p>
+</li>
+<li>
+<p>End to End tests</p>
+</li>
+<li>
+<p>Integrationtests</p>
+</li>
+</ul>
+</div>
+<hr>
+<div class="paragraph">
+<p>There are two types of testing strategies called</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Example based testing</p>
+</li>
+<li>
+<p>Property based testing</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_unittests">Unittests</h3>
+<div class="paragraph">
+<p>As it says in its name, unittests represent the smallest testing unit of code. Their main prupose is to ensure functionality on a more fine grained scale and without the context of your whole Application.
+They can come in many different sizes. Method tests / Class tests can all be considered Unittests, but normally you take the smallest unit possible (Method test).</p>
+</div>
+<div class="paragraph">
+<p>For us the role <strong>Unit = Methodtest</strong> applies.</p>
+</div>
+<div class="sect3">
+<h4 id="_example">Example</h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="_end_to_end_tests">End to end tests</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_integration_tests">Integration tests</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_mocking">Mocking</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_example_based_testing">Example based testing</h3>
+<div class="paragraph">
+<p>You will already be really familiar with this type of testing, because this is the intuitive way to test functionality.</p>
+</div>
+<div class="paragraph">
+<p>Define an input &#8594; test the functionality with that predefined input &#8594; is the output the same as my expected output?</p>
+</div>
+<div class="paragraph">
+<p>Example based testing requires hardcoded checks on both ends and is the most easiest way to ensure functionality.
+The problem is that many testcases will be ignored by predefining your in and output.
+Maybe you dont even have some possible problematic edge cases in mind. This can lead to major issues in production because every fail that is not recognized in code is one error too much.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_property_based_testing_and_its_random_nature">Property based testing and its random nature</h3>
+<div class="paragraph">
+<p>Property Based testing aka random testing, is not specified in size. Property Based testing means that
+Its counterpart is <strong>example based testing</strong> which tests cases for a predefined input of variables.</p>
+</div>
+<div class="paragraph">
+<p>In java there are many testing frameworks available to implement such randomness. One of them beeing <strong>jqwik</strong>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_test_workflow">Test Workflow</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For Unittests</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Example based Testing</p>
+</li>
+<li>
+<p>Property based Testing</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_code_coverage">Code Coverage</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Code Coverage is the metric to define how well your code is targeted by your tests.
+It is displayed in percentage points for example bad testing would result in 20% code coverage &#8594; 20% of your actual code has been covered by your tests.</p>
+</div>
+<div class="paragraph">
+<p>The industries differ in CC standart very much. For example plane software has to hit 97% CC before beeing able to get into production cycles.
+This is a more extreme example, because normally <strong>80%</strong> is the golden Standart for non critical software.
+(Critical software is Software that acts in critical Systems. And Problems or errors in such fields can cause harm or danger to human individuals)</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2024-10-02 09:45:25 UTC
+</div>
+</div>
+</body>
+</html>

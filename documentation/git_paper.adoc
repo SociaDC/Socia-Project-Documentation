@@ -1,11 +1,21 @@
-### Git (Topics)
 
-#### Introduction 
-Author : Philipp Cserich 
+= Git & Conventions
+:toc:
+:toc-title: Table of Contents
+:toclevels: 4
+:description: Git Guide
+
+== Introduction
+Author : Philipp Cserich
+
 Date : 08.07.2024
-This Git guide is written for Socia developers only, all usages or publications outside of project reach are not allowed and therefore this document restrains in terms restricted access.
 
-#### Once upon a Git.
+---
+
+This Git guide is written for Socia/Phobos developers only, all usages or publications outside of project reach are not allowed and therefore this document restrains in terms restricted access.
+
+
+=== Once upon a Git.
 Git as it is today is a distributed version control system, created for code collaboration processes.
 Todays developers are using tools such as GitHub, GitLab or even BitBucket, but what if i tell you that those iterations of version management platforms are not implementing the core principles of git? What if i tell you that the "Inventor" of git, the allmighty Linus Torvald was so fed up by the idea of a centraliced code collab service that he tried to develop his own system?
 
@@ -39,8 +49,11 @@ You will later see how linus torvald intended the system to be used.
 (Example where i create a git repo by hand without git init...)
 
 Before we start digging into specific commandlets and execution examples, we have to understand how git operates.
-The Git system is always initalized by using the command 
->$ git init
+The Git system is always initalized by using the command
+
+```bash
+$ git init
+```
 
 This command is mostly responsible to prepare to operation environment of git.
 It includes the creation of a .git repository, as well as the subdirectories **refs/tags, refs/heads and objects**.
@@ -60,23 +73,22 @@ When understanding how changes actually reach their destination you have to know
 - The repository (reached through **git commit .** )
 - The remote (external service => leaves your PC with **git push**)
 
-image::/Assets/Images/Pasted image 20240711084325.png[git_areas,title="Git Areas ^[1]^"]
+image::assets/images/GitFlow.png[Git Areas,title="Git Areas",width="600"]
 
 Originally linus torvald intended the system to work without any centralized Server that is responsible to store all of the developers data.
 In his mind, developers would send their requests, commits and branches from one pc to another, so that any developer is able to access their state of the application without using such server.
 
-##### What is a Commit 
+==== What is a Commit
 Commits are Nodes that save changed information.
 They always except for one time have to be based on another commit.
 
-image::/Assets/Images/Pasted image 20240711083258.png[commit_info,title="Commit Info ^[1]^"]
-
+image::assets/images/Commit.png[Commit,title="Commit",width="300"]
 
 A node also contains, a rsa id which is used to identify the signed commit.
 This RSA id includes the information of date, author, changed content as well as its predecessor which leads to a unique key identifier.
 As each file would be repetetive to save, git just saves the changes of each individual file, therefore each commit is necessary to rebuild the whole application.
 
-##### What is a Branch
+==== What is a Branch
 The concept of a branch is always visually displayed by a stream of commits.
 In theory that would be correct, but its technical realization looks a bit different.
 Commits are never meant to save their predestined branch, as one commit can be present in multiple branches. 
@@ -86,14 +98,15 @@ These Heads act as pointers on dedicated commits.
 If you create a new Branch from master, there is just one Pointer being added to the system directing to the last commit accessed.
 After commiting again, the new commit is getting pointed at by our new branch, while the previous one maintains beeing the head of master and so on.
 Because of that "diverging Branches" are just branches that focus on different commits, that somewhere had the same past (commit history).
-image::/Assets/Images/Pasted image 20240711083646.png[commit,title="Commit Explanation ^[1]^"]
 
+
+image::assets/images/CommitBranching.png[CommitStructure,title="Commit Structure",width="500"]
 
 Each Branch header also has a unique SHA-1 hashed identifier.
 
 
 
-##### What are Branches and how to create / Delete Them
+==== What are Branches and how to create / Delete Them
 
 In a real scenario you are able to create branches in two ways.
 By using the cli in which you have to create the branch by hand.
@@ -103,10 +116,10 @@ or by creating it directly in the github web ui.
 *Go to Branches > new Branch and choose your origin.*
 
 
-image::/Assets/Images/Pasted image 20240711074105.png[branch1,title="Branch Explanation ^[1]^"]
-image::/Assets/Images/Pasted image 20240711074149.png[branch2,title="Branch Explanation ^[2]^"]
+image::assets/images/Branch.png[Branch,title="Branch",width="500"]
+image::assets/images/newBranch.png[newBranch,title="newBranch",width="500"]
 
-##### Merge strategies - When to use each (+ Interactive rebase / Squash)
+==== Merge strategies - When to use each (+ Interactive rebase / Squash)
 
 We have already discussed what branches are and how they work.
 But we have not solved the question, what benefits they should provide for the development team.
@@ -144,7 +157,7 @@ In this section git becomes a bit tricky, there are several branch merging strat
 
 With the use of `PRs` or `Pull Requests`, you are able to create such merge statements in a Github environment.
 
-#### Project use :
+=== Project usage
 In our projects our team should mainly use the squash and fast forward technique.
 Therefore no "ugly" merge commits are getting created and your version history stays clean.
 This vsh structure lets us work a bit different though.
@@ -165,7 +178,8 @@ This prevents the git system to cause merge commits when pulling in remote chang
 ```bash
 git config --global pull.rebase true
 ```
-#### How to use git in Github
+
+==== How to use git in Github
 
 The Git system has around 152 commands in total (1.7.11.3)
 Normally you will face around 30 of them which are known under the name "Porcelain" commands.
@@ -175,39 +189,51 @@ For the sake of simplicity we will mostly focus on those basic "Porcelain" Comma
 - **`git init`**:
     
     - Initializes a new Git repository in the current directory.
+
 - **`git clone <repository-url>`**:
     
     - Creates a copy of an existing repository from the given URL to your local machine.
+
 - **`git status`**:
     
     - Shows the current status of the working directory and the staging area, including changes that are staged for commit, changes that are not staged, and untracked files.
+
 - **`git add <file>`**:
     
     - Adds a file to the staging area, making it ready to be committed. Use `.` to add all changes.
+
 - **`git commit -m "<message>"`**:
     
     - Records changes to the repository with a descriptive message.
+
 - **`git log`**:
     
     - Displays a list of all the commits in the repository's history.
+
 - **`git diff`**:
     
     - Shows the differences between the working directory and the staging area, or between commits.
+
 - **`git branch`**:
     
     - Lists all branches in the repository. When used with a branch name, it creates a new branch.
+
 - **`git checkout <branch>`**:
     
     - Switches to the specified branch and updates the working directory to match it.
+
 - **`git merge <branch>`**:
     
     - Combines the specified branch's history into the current branch.
+
 - **`git pull`**:
     
     - Fetches changes from a remote repository and merges them into the current branch.
+
 - **`git push`**:
     
     - Uploads local commits to a remote repository.
+
 - **`git remote -v`**:
     
     - Shows the URLs of the remote repositories for your project.
@@ -215,27 +241,32 @@ For the sake of simplicity we will mostly focus on those basic "Porcelain" Comma
 - **`git remote add <remoteName> <remoteURL>`**:
     
     - Adds a new Remote Repository destination into your git context.
+
 - **`git fetch`**:
     
     - Downloads objects and refs from a remote repository, but does not integrate them into your current branch.
+
 - **`git reset --hard <commit>`**:
 	
     - Resets the current branch to the specified commit, discarding all changes in the working directory and staging area.
     
     >**DON'T USE WITHOUT PERMISSION!!**
 
-#### Socia Naming Conventions
+==== Socia Naming Conventions
 
-Now we arre heading into the territory of project specific conventions.
+Now we are heading into the territory of project specific conventions.
 These are meant to be specified once and EVERYONE in the team should to work around them.
 
 1. Commit Naming
 Please always provide a descriptive name of the fullfilled task as well as a description.
+
 ```bash
 git commit -m ""
 ```
-Doesn't miss you. 
+
+Doesn't miss you.
 You are not that guy. Use this instead
+
 ```bash
 git commit
 ```
@@ -258,7 +289,8 @@ As their content is linked to the issue definition we found that indexing such b
 
 ***BEST PRACTICE:***
 Use this template to create the ticket:
-image::/Assets/Images/Pasted image 20240711082139.png[ticket_reference,title="Title Reference ^[1]^"]
+
+image::assets/images/TechnicalFeature.png[BugReport,title="BugReport",width="500"]
 
 `feature#<Ticket-number>/<feature-name>`
 
@@ -272,7 +304,9 @@ Bug and Hotfixes are no actual features but rather code fixtures or completions 
 Their difference beeing that Hotfixes are direct reactions on top of the `main` branch and Bugfixes are made from the `dev` branch.
 ***BEST PRACTICE:***
 Use this template to create the ticket:
-image::/Assets/Images/Pasted image 20240711082116.png[ticket_reference2,title="Title Reference ^[2]^"]
+
+
+image::assets/images/BugReport.png[BugReport,title="BugReport",width="500"]
 
 `bugfix#<Bugfix-ticketnumber>/<bugfix-name>`
 
@@ -285,15 +319,44 @@ For Example :
 3. Issue Naming
 
 Creating a new Issue should be relatively straight forward.
-![[Pasted image 20240711081954.png]]
+
+image::assets/images/newIssue.png[Issue naming,title="Issue naming",width="700"]
+
 Afterwards Choose your template of choice and start describing your desired Product state.
 The Issues names should ALWAYS represent the feature they are representing.
 ***(Funny names do be allowed though)***
 
 
+=== Accessing the Correct Registry
+
+In our case the normal Registry of github is not the way to go. Because of more advanced features of git servers, especially CICD related, we decided to move to a privately hosted instance of Gitea.
+You do not need to remove your remote connection that currently exists to Github.
+Rather than deleting the old one we will create a second entry in our "remote" entries.
+
+You might know the syntax from adding remote access such as :
+
+[source]
+----
+$ git init
+$ git remote add origin [registrylink]
+----
+
+In this example the keyword origin is not actually a magic keyword but rather the default naming of a remote repository reference.
+All we have to do is add our new repository (preferrably with a name like "gitea")
+
+[source]
+----
+$ git remote add gitea [repository reference]
+----
+
+
+== Author / Contact Person
+
 If you have any questions, you can contact me.
-Philipp.cserich@gmail.com
-+436706059019
-#### Links & Ressources 
-[History of Git - GeeksforGeeks](https://www.geeksforgeeks.org/history-of-git/)
-[Git - A Short History of Git (git-scm.com)](https://git-scm.com/book/en/v2/Getting-Started-A-Short-History-of-Git)
+
+Philipp.cserich@gmail.com || +436706059019
+
+=== Links & Ressources
+
+- [History of Git - GeeksforGeeks](https://www.geeksforgeeks.org/history-of-git/)
+- [Git - A Short History of Git (git-scm.com)](https://git-scm.com/book/en/v2/Getting-Started-A-Short-History-of-Git)
