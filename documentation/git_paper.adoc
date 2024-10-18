@@ -358,5 +358,7 @@ Philipp.cserich@gmail.com || +436706059019
 
 === Links & Ressources
 
-- [History of Git - GeeksforGeeks](https://www.geeksforgeeks.org/history-of-git/)
-- [Git - A Short History of Git (git-scm.com)](https://git-scm.com/book/en/v2/Getting-Started-A-Short-History-of-Git)
+- 01 [History of Git - GeeksforGeeks](https://www.geeksforgeeks.org/history-of-git/)
+- 02 [Git - A Short History of Git (git-scm.com)](https://git-scm.com/book/en/v2/Getting-Started-A-Short-History-of-Git)
+- 03 [Git - Official Documentation](https://git-scm.com/doc)
+- 04 [Deep Dive - Git Implementation](https://github.com/git/git)

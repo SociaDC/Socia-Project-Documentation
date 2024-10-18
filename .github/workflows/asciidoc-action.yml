@@ -1,0 +1,33 @@
+name: Commit Trigger Workflow
+
+on:
+  push:
+    branches:
+      - main  # Change to your branch if necessary
+
+jobs:
+  execute-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Run exec.sh script
+        run: |
+          chmod +x ./exec.sh  
+          ./exec.sh          
+
+      - name: Check for file changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          if git diff-index --quiet HEAD --; then
+            echo "No changes to commit."
+          else
+            git commit -m "Automated commit: changes made by exec.sh"
+            git push
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

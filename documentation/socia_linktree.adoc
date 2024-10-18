@@ -1,0 +1,13 @@
+### Linktree - Project Socia
+
+/Socia_Project +
+├── /Git +
+│   ├── link:https://github.com/SociaDC[Socia - Github Link (Deprecated)] +
+│   └── link:http://62.178.100.162/Socia[Socia - Gitea Link] +
+│ +
+├── /Project_Organisation_and_Documentation +
+│   ├── OpenProject (TODO) +
+│   └── link:https://sociadc.github.io/Socia-Project-Documentation/[Documentation Server] +
+│ +
+└── /Design_and_Mockup +
+└── link:https://www.figma.com/design/5A6RSGTJw0v57TCGblZYrl/Socia-Frontend?node-id=342-412&node-type=canvas&t=xNIZJrr1wouztIR9-0[Figma Page for Socia] +
